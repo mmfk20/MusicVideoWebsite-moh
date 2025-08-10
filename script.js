@@ -1,20 +1,23 @@
-// Get box element
+// Select the animated box
 let box = document.getElementById("animatedBox");
 
-// Animation variables
+// Starting position
 let pos = 0;
 let direction = 1; // 1 = right, -1 = left
 
 function animateBox() {
-    // Reverse direction at limits
+    // Change direction if hitting boundaries
     if (pos >= 200 || pos <= 0) {
         direction *= -1;
     }
-    pos += direction * 2; // Move 2px each frame
+
+    // Update position
+    pos += direction * 2;
     box.style.left = pos + "px";
 
+    // Keep looping the animation
     requestAnimationFrame(animateBox);
 }
 
-// Start animation
+// Start the animation
 animateBox();
