@@ -1,0 +1,28 @@
+/* Page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Heading style */
+h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Center video */
+.video-container {
+    margin: 20px auto;
+}
+
+/* Animated box styling */
+#animatedBox {
+    width: 100px;
+    height: 100px;
+    background-color: crimson;
+    margin: 50px auto;
+    position: relative;
+}
