@@ -1,23 +1,18 @@
-// Select the animated box
-let box = document.getElementById("animatedBox");
+const box = document.getElementById("animatedBox");
 
-// Starting position
-let pos = 0;
-let direction = 1; // 1 = right, -1 = left
+function moveBoxRandomly() {
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
 
-function animateBox() {
-    // Change direction if hitting boundaries
-    if (pos >= 200 || pos <= 0) {
-        direction *= -1;
-    }
+  const maxLeft = vw - box.offsetWidth;
+  const maxTop = vh - box.offsetHeight;
 
-    // Update position
-    pos += direction * 2;
-    box.style.left = pos + "px";
+  const randomLeft = Math.floor(Math.random() * maxLeft);
+  const randomTop = Math.floor(Math.random() * maxTop);
 
-    // Keep looping the animation
-    requestAnimationFrame(animateBox);
+  box.style.position = "fixed";
+  box.style.left = randomLeft + "px";
+  box.style.top = randomTop + "px";
 }
 
-// Start the animation
-animateBox();
+box.addEventListener("click", moveBoxRandomly);
